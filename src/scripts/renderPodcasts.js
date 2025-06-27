@@ -21,6 +21,7 @@ export const PodcastRenderer = {
 
       const podcastEl = document.createElement("podcast-item");
       podcastEl.setPodcast(podcast);
+      Modal.openModal(podcastEl, podcast);
       podcastEl.addEventListener("click", () => {
         Modal.openModal(podcastEl, podcast);
       });
