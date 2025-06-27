@@ -1,5 +1,6 @@
 import { podcasts } from "./initialData.js";
 import { PodcastRenderer } from "./renderPodcasts.js";
+
 /**
  * Main application logic for initializing and rendering the podcast app.
  * @namespace PodcastApp
