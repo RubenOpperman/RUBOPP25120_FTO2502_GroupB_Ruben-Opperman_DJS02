@@ -20,12 +20,6 @@ export const PodcastRenderer = {
     podcasts.forEach((podcast) => {
       const podcastEl = document.createElement("podcast-item");
       podcastEl.setPodcast(podcast);
-      // Modal.openModal(podcastEl, podcast);
-
-      // Attach modal open functionality on click
-      // podcastEl.addEventListener("click", () => {
-      //   Modal.openModal(podcastEl, podcast);
-      // });
 
       // Listen for custom event instead of directly wiring modal logic
       podcastEl.addEventListener("podcastSelected", (e) => {
