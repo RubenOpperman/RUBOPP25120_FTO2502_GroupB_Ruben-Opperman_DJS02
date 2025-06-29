@@ -12,16 +12,15 @@ export const Modal = {
    * @param {HTMLElement} container - The element that was clicked to trigger the modal.
    * @param {Object} podcast - The podcast object to render in the modal.
    */
-  openModal: (container, podcast) => {
-    container.addEventListener("click", function () {
-      const modal = document.getElementById("podcast-modal");
-      modal.innerHTML = "";
-      const content = ModalRenderer.createModalCard(podcast);
-      modal.appendChild(content);
-      modal.showModal();
-      const closeBtn = document.getElementById("close-btn");
-      Modal.closeModal(closeBtn);
-    });
+  openModal: (podcast) => {
+    const modal = document.getElementById("podcast-modal");
+    modal.innerHTML = "";
+    const content = ModalRenderer.createModalCard(podcast);
+    modal.appendChild(content);
+    modal.showModal();
+
+    const closeBtn = document.getElementById("close-btn");
+    Modal.closeModal(closeBtn);
   },
   /**
    * Closes the modal when the close button is clicked.

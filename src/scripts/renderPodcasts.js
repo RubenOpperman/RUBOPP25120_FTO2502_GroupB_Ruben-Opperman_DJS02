@@ -20,11 +20,16 @@ export const PodcastRenderer = {
     podcasts.forEach((podcast) => {
       const podcastEl = document.createElement("podcast-item");
       podcastEl.setPodcast(podcast);
-      Modal.openModal(podcastEl, podcast);
+      // Modal.openModal(podcastEl, podcast);
 
       // Attach modal open functionality on click
-      podcastEl.addEventListener("click", () => {
-        Modal.openModal(podcastEl, podcast);
+      // podcastEl.addEventListener("click", () => {
+      //   Modal.openModal(podcastEl, podcast);
+      // });
+
+      // Listen for custom event instead of directly wiring modal logic
+      podcastEl.addEventListener("podcastSelected", (e) => {
+        Modal.openModal(e.detail);
       });
 
       container.appendChild(podcastEl);
@@ -62,6 +67,17 @@ class Podcast extends HTMLElement {
     const shadow = this.attachShadow({ mode: "open" });
     shadow.appendChild(style);
     shadow.appendChild(template.content.cloneNode(true));
+
+    // Listen for internal click and dispatch a custom event
+    this.addEventListener("click", () => {
+      this.dispatchEvent(
+        new CustomEvent("podcastSelected", {
+          detail: this.podcast,
+          bubbles: true, // Allows the event to bubble up to parent nodes
+          composed: true, // Allows it to pass through shadow DOM boundaries
+        })
+      );
+    });
   }
   /**
    * Sets the podcast data for the component and triggers a re-render.

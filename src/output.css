@@ -196,14 +196,8 @@
   .relative {
     position: relative;
   }
-  .top-1 {
-    top: calc(var(--spacing) * 1);
-  }
   .top-1\/2 {
     top: calc(1/2 * 100%);
-  }
-  .left-1 {
-    left: calc(var(--spacing) * 1);
   }
   .left-1\/2 {
     left: calc(1/2 * 100%);
@@ -265,26 +259,11 @@
   .grid {
     display: grid;
   }
-  .table {
-    display: table;
-  }
-  .aspect-\[16\/9\] {
-    aspect-ratio: 16/9;
-  }
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
   .h-15 {
     height: calc(var(--spacing) * 15);
-  }
-  .h-52 {
-    height: calc(var(--spacing) * 52);
-  }
-  .h-\[70\%\] {
-    height: 70%;
-  }
-  .h-\[200px\] {
-    height: 200px;
   }
   .h-auto {
     height: auto;
@@ -292,23 +271,8 @@
   .h-full {
     height: 100%;
   }
-  .max-h-full {
-    max-height: 100%;
-  }
-  .min-h-full {
-    min-height: 100%;
-  }
   .w-5 {
     width: calc(var(--spacing) * 5);
-  }
-  .w-\[10\%\] {
-    width: 10%;
-  }
-  .w-\[50\%\] {
-    width: 50%;
-  }
-  .w-\[95\%\] {
-    width: 95%;
   }
   .w-auto {
     width: auto;
@@ -322,19 +286,8 @@
   .max-w-\[full\] {
     max-width: full;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .-translate-x-1 {
-    --tw-translate-x: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .-translate-y-1 {
-    --tw-translate-y: calc(var(--spacing) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-1\/2 {
@@ -343,9 +296,6 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .resize {
-    resize: both;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -383,10 +333,6 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .border-1 {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -397,9 +343,6 @@
   }
   .border-\[\#9CA3AF\] {
     border-color: #9CA3AF;
-  }
-  .border-gray-400 {
-    border-color: var(--color-gray-400);
   }
   .bg-Background {
     background-color: var(--color-Background);
@@ -509,9 +452,6 @@
   .text-secondary-font-color {
     color: var(--color-secondary-font-color);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -527,10 +467,6 @@
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
@@ -667,11 +603,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -699,7 +630,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
     }
   }
 }
